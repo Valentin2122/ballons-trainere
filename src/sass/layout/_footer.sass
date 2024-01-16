@@ -1,0 +1,35 @@
+.footer
+    padding: 8rem
+    background: #333
+    @include respond(tab-port)
+        padding: 8rem 8rem 8rem 11rem
+    &__logo
+        width: 12rem
+    &__list
+        list-style: none
+        text-align: center
+    &__item
+        display: inline-block
+        &:not(:last-child)
+            margin-right: 5rem
+        @include respond(tab-land)
+            &:not(:last-child)
+                margin-right: 1rem
+        @include respond(tab-port)
+            margin: 0
+            padding: 2rem
+            
+    &__link
+        &:link, &:visited
+            color: $color-white
+            text-decoration: none
+            text-transform: uppercase
+            font-size: 1.6rem
+            font-weight: 300
+            letter-spacing: .2rem
+            display: inline-block
+            transition: .3s all
+        &:hover
+            transform: translateY(-1.1rem) scale(1.01)
+            color: $color-brown-dark
+            text-shadow: $shadow-h2

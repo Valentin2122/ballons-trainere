@@ -1,0 +1,56 @@
+.btn
+    &, &:link, &:visited
+        @include style-link($color-gray)
+        padding: 1.5rem 4rem
+        background: $color-white
+        border-radius: 5rem
+        transition: all 1s
+        position: relative
+        font-size: 2rem
+        border: none
+        @include respond(tab-land)
+            font-size: 1.8rem
+            padding: 1.4rem 3.8rem
+        @include respond(tab-port)
+            padding: 2rem 5rem
+            box-shadow: $box-shadow
+    &:hover
+        transform: translateY(-5px)
+        box-shadow: $box-shadow
+        &::after
+            opacity: 0
+            transform: scaleX(1.5) scaleY(1.5)
+    &:active
+        transform: translateY(-3px)
+    &::after
+        content: ''
+        background: $color-white
+        width: 100%
+        height: 100%
+        border-radius: 5rem
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: all 1s
+    &_animated
+        animation: btntoup 1.2s ease-out 1.5s
+        animation-fill-mode: backwards
+
+.btn_brown
+    &, &:link, &:visited
+        background: $color-brown-dark
+        color: $color-white
+        font-size: 2rem
+        font-weight: 400
+        letter-spacing: .5rem
+        margin-top: 3.8rem
+        @include respond(tab-land)
+            font-size: 1.6rem
+            letter-spacing: .4rem
+            padding: 1.4rem 2.8rem
+            margin-top: 1.5rem
+
+    &::after
+        background: $color-brown-dark
